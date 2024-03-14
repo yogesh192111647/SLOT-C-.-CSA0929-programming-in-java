@@ -1,0 +1,56 @@
+public interface Tree {
+
+    void fruits(int a, int b);
+
+    void leaves(int a, int b, int c);
+
+    void flowers(int a, int b, int c, int d);
+}
+
+class Branch1 implements Tree {
+
+    @Override
+    public void fruits(int a, int b) {
+        System.out.println("Fruits in Branch1: " + a + " and " + b);
+    }
+
+    @Override
+    public void leaves(int a, int b, int c) {
+        System.out.println("Leaves in Branch1: " + a + ", " + b + ", and " + c);
+    }
+
+    @Override
+    public void flowers(int a, int b, int c, int d) {
+        System.out.println("Flowers in Branch1: " + a + ", " + b + ", " + c + ", and " + d);
+    }
+}
+
+class Branch2 implements Tree {
+
+    @Override
+    public void fruits(int a, int b) {
+        System.out.println("Fruits in Branch2: " + a + " and " + b);
+    }
+
+    @Override
+    public void leaves(int a, int b, int c) {
+        System.out.println("Leaves in Branch2: " + a + ", " + b + ", and " + c);
+    }
+
+    @Override
+    public void flowers(int a, int b, int c, int d) {
+        System.out.println("Flowers in Branch2: " + a + ", " + b + ", " + c + ", and " + d);
+    }
+}
+
+class Main {
+
+    public static void main(String[] args) {
+        Tree tree1 = new Branch1();
+        Tree tree2 = new Branch2();
+
+        tree1.fruits(1, 2);
+        tree1.leaves(3, 4, 5);
+        tree1.flowers(6, 7, 8, 9);
+
+        tree2
