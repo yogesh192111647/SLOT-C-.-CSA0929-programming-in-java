@@ -1,0 +1,43 @@
+public class BankAccount {
+    private String accountNumber;
+    private double balance;
+
+    public BankAccount(String accountNumber, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.balance = initialBalance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited Rs. " + amount + " into account " + accountNumber);
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn Rs. " + amount + " from account " + accountNumber);
+        } else {
+            System.out.println("Insufficient balance or invalid withdrawal amount.");
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        BankAccount account1 = new BankAccount("123456", 1000);
+        System.out.println("Initial balance: Rs. " + account1.getBalance());
+        
+        account1.deposit(500);
+        System.out.println("Current balance: Rs. " + account1.getBalance());
+        
+        account1.withdraw(200);
+        System.out.println("Current balance: Rs. " + account1.getBalance());
+    }
+}
