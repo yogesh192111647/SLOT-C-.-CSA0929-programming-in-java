@@ -1,0 +1,35 @@
+public class VoteEligibility {
+
+    public static void main(String[] args) {
+
+        // Defining the current year and the eligibility age
+        int currentYear = 2073;
+        int eligibilityAge = 21;
+
+        // Finding the birth year of the person
+        int birthYear = currentYear - eligibilityAge;
+
+        // Checking if the birth year is more than 2060
+        if (birthYear > 2060) {
+            System.out.println("Error: The birth year cannot be more than 2060.");
+        } else {
+            // Finding the years between the person's vote-eligible year and 2023
+            int yearsBetween = 2023 - eligibilityAge;
+
+            // Checking if the number of years between is odd or even
+            if (yearsBetween % 2 == 0) {
+                // Finding the median of the birth year and 2023
+                int median = (birthYear + 2023) / 2;
+
+                // Printing the median of the birth year and 2023
+                System.out.println("The median of the birth year and 2023 is " + median);
+            } else {
+                // Finding the median of the birth year and 2023
+                int median = (birthYear + 2023 + 1) / 2;
+
+                // Printing the median of the birth year and 2023
+                System.out.println("The median of the birth year and 2023 is " + median);
+            }
+        }
+    }
+}
