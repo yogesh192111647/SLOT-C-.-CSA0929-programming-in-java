@@ -1,0 +1,25 @@
+public class GreatestIfValue {
+
+    public static void main(String[] args) {
+
+        // Defining three variables
+        int a = 10;
+        int b = 20;
+        int c = 30;
+
+        // Using nested if statements to find which if statement contains the greatest value
+        if (a > b) {
+            if (a > c) {
+                System.out.println("The greatest value is a = " + a);
+            } else {
+                System.out.println("The greatest value is c = " + c);
+            }
+        } else {
+            if (b > c) {
+                System.out.println("The greatest value is b = " + b);
+            } else {
+                System.out.println("The greatest value is c = " + c);
+            }
+        }
+    }
+}
