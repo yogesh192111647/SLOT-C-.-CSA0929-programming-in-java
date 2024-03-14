@@ -1,0 +1,67 @@
+public class StringMethods {
+
+    public static void main(String[] args) {
+
+        // Creating strings using constructors
+        String string1 = new String("Hello, World!");
+        String string2 = new String(new char[]{'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!'});
+        String string3 = new String(new char[]{'H', 'e', 'l', 'l', 'o'}, 0, 5);
+
+        System.out.println("String 1: " + string1);
+        System.out.println("String 2: " + string2);
+        System.out.println("String 3: " + string3);
+
+        // Length of a string
+        int length = string1.length();
+        System.out.println("Length of String 1: " + length);
+
+        // Concatenating strings
+        String string4 = string1.concat(" How are you?");
+        System.out.println("Concatenated String: " + string4);
+
+        // Comparing strings
+        String string5 = "Hello, World!";
+        boolean isEqual = string1.equals(string5);
+        System.out.println("Are String 1 and String 5 equal? " + isEqual);
+
+        // Getting a substring
+        String string6 = string1.substring(7, 12);
+        System.out.println("Substring of String 1: " + string6);
+
+        // Replacing a substring
+        String string7 = string1.replace("World", "Java");
+        System.out.println("Replaced String: " + string7);
+
+        // Checking if a string contains a substring
+        boolean contains = string1.contains("World");
+        System.out.println("Does String 1 contain the substring 'World'? " + contains);
+
+        // Checking if a string starts with a substring
+        boolean startsWith = string1.startsWith("Hello");
+        System.out.println("Does String 1 start with the substring 'Hello'? " + startsWith);
+
+        // Checking if a string ends with a substring
+        boolean endsWith = string1.endsWith("!");
+        System.out.println("Does String 1 end with the substring '!'? " + endsWith);
+
+        // Trimming whitespace from a string
+        String string8 = " Hello, World! ";
+        String trimmedString = string8.trim();
+        System.out.println("Trimmed String: " + trimmedString);
+
+        // Converting a string to uppercase
+        String uppercaseString = string1.toUpperCase();
+        System.out.println("Uppercase String: " + uppercaseString);
+
+        // Converting a string to lowercase
+        String lowercaseString = string1.toLowerCase();
+        System.out.println("Lowercase String: " + lowercaseString);
+
+        // Splitting a string into an array of strings
+        String[] splitArray = string4.split(" ");
+        System.out.println("Array of Strings: ");
+        for (String s : splitArray) {
+            System.out.println(s);
+        }
+    }
+}
