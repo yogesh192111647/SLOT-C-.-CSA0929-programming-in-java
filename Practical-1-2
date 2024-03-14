@@ -1,0 +1,50 @@
+public class DataTypeConversion {
+
+    public static void main(String[] args) {
+
+        // Implicit conversion (widening) from smaller data types to larger ones
+        byte byteValue = 10;
+        short shortValue = byteValue; // implicit widening conversion from byte to short
+        int intValue = shortValue; // implicit widening conversion from short to int
+        long longValue = intValue; // implicit widening conversion from int to long
+        float floatValue = longValue; // implicit widening conversion from long to float
+        double doubleValue = floatValue; // implicit widening conversion from float to double
+        System.out.println("Implicit:");
+        System.out.println("Byte value: " + byteValue);
+        System.out.println("Short value: " + shortValue);
+        System.out.println("Int value: " + intValue);
+        System.out.println("Long value: " + longValue);
+        System.out.println("Float value: " + floatValue);
+        System.out.println("Double value: " + doubleValue);
+
+        // Explicit conversion (narrowing) from larger data types to smaller ones
+        double doubleValue2 = 3.14159;
+        float floatValue2 = (float) doubleValue2; // explicit narrowing conversion from double to float
+        long longValue2 = 1234567890123L;
+        int intValue2 = (int) longValue2; // explicit narrowing conversion from long to int (truncation)
+        int intValue3 = 255;
+        byte byteValue2 = (byte) intValue3; // explicit narrowing conversion from int to byte (truncation)
+        System.out.println("Explicit:");
+        System.out.println("Float value 2: " + floatValue2);
+        System.out.println("Int value 2: " + intValue2);
+        System.out.println("Byte value 2: " + byteValue2);
+
+        // Overflow and underflow scenarios
+        byte byteValue3 = 127;
+        byteValue3++; // overflow
+        System.out.println("Overflow and Underflow:");
+        System.out.println("Byte value 3: " + byteValue3); // prints -128
+
+        short shortValue3 = -32768;
+        shortValue3--; // underflow
+        System.out.println("Short value 3: " + shortValue3); // prints 32767
+
+        int intValue4 = 2147483647;
+        intValue4++; // overflow
+        System.out.println("Int value 4: " + intValue4); // prints -2147483648
+
+        long longValue3 = 9223372036854775807L;
+        longValue3++; // overflow
+        System.out.println("Long value 3: " + longValue3); // prints -9223372036854775808
+    }
+}
