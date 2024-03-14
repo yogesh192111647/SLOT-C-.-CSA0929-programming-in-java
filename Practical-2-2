@@ -1,0 +1,46 @@
+public class Parent {
+
+    int a, b;
+
+    public Parent() {
+        this(10, 15);
+        System.out.println("Default constructor called");
+    }
+
+    public Parent(int a, int b) {
+        this.a = a;
+        this.b = b;
+        System.out.println("Parametrized constructor called");
+    }
+
+    public void disp() {
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+    }
+}
+
+class Child extends Parent {
+
+    public Child() {
+        this(20, 25);
+        System.out.println("Child default constructor called");
+    }
+
+    public Child(int a, int b) {
+        super(a, b);
+        System.out.println("Child parametrized constructor called");
+    }
+
+    public void disp() {
+        super.disp();
+        System.out.println("Child disp() called");
+    }
+}
+
+class Main {
+
+    public static void main(String[] args) {
+        Child child = new Child();
+        child.disp();
+    }
+}
