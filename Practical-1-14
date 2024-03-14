@@ -1,0 +1,20 @@
+public class MissingNumbers {
+
+    public static void main(String[] args) {
+        int[] series = {1, 5, 11, 19};
+        int expectedNumber = series[0];
+
+        System.out.print("Missing numbers: ");
+        for (int i = 1; i < series.length; i++) {
+            while (series[i] > expectedNumber + 1) {
+                System.out.print(expectedNumber + " ");
+                expectedNumber++;
+            }
+            expectedNumber = series[i];
+        }
+        while (expectedNumber < series[series.length - 1]) {
+            System.out.print(expectedNumber + " ");
+            expectedNumber++;
+        }
+    }
+}
