@@ -1,0 +1,82 @@
+public class Clock {
+    private int hours;
+    private int minutes;
+    private int seconds;
+
+    public Clock(int hours, int minutes, int seconds) {
+        if (isValidTime(hours, minutes, seconds)) {
+            this.hours = hours;
+            this.minutes = minutes;
+            this.seconds = seconds;
+        } else {
+            System.out.println("Invalid time provided.");
+        }
+    }
+
+    private boolean isValidTime(int hours, int minutes, int seconds) {
+        return (hours >= 0 && hours < 24) && (minutes >= 0 && minutes < 60) && (seconds >= 0 && seconds < 60);
+    }
+
+    public void setTime(int hours, int minutes, int seconds) {
+        if (isValidTime(hours, minutes, seconds)) {
+            this.hours = hours;
+            this.minutes = minutes;
+            this.seconds = seconds;
+        } else {
+            System.out.println("Invalid time provided.");
+        }
+    }
+
+    public void setTimeAMPM(int hours, int minutes, int seconds, boolean isAM) {
+        if (isValidTime(hours, minutes, seconds)) {
+            if (hours >= 0 && hours <= 12) {
+                this.hours = hours;
+            } else {
+                System.out.println("Invalid hours for AM/PM format.");
+                return;
+            }
+
+            this.minutes = minutes;
+            this.seconds = seconds;
+
+            if (!isAM) {
+                this.hours += 12;
+            }
+        } else {
+            System.out.println("Invalid time provided.");
+        }
+    }
+
+    public void displayTime() {
+        System.out.printf("Time: %02d:%02d:%02d\n", hours, minutes, seconds);
+    }
+
+    public static void main(String[] args) {
+        Clock clock1 = new Clock(10, 30, 45);
+        clock1.displayTime();
+
+        Clock clock2 = new Clock(25, 70, 80); // Invalid time
+        clock2.displayTime(); // This won't display anything due to invalid time
+
+        Clock clock3 = new Clock(5, 45, 0);
+        clock3.displayTime();
+
+        Clock clock4 = new Clock(14, 20, 30);
+        clock4.displayTime();
+
+        Clock clock5 = new Clock(7, 15, 0);
+        clock5.displayTime();
+
+        Clock clock6 = new Clock(15, 45, 30);
+        clock6.setTimeAMPM(3, 45, 30, true);
+        clock6.displayTime();
+
+        Clock clock7 = new Clock(5, 0, 0);
+        clock7.setTimeAMPM(5, 0, 0, false);
+        clock7.displayTime();
+
+        Clock clock8 = new Clock(20, 10, 0);
+        clock8.setTimeAMPM(20, 10, 0, true); // Invalid hours for AM/PM format
+        clock8.displayTime(); // This won't display anything due to invalid hours for AM/PM format
+    }
+}
