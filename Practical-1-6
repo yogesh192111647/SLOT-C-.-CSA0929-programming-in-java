@@ -1,0 +1,69 @@
+public class ConfusionMatrix {
+
+    public static void main(String[] args) {
+
+        // Creating a confusion matrix
+        int[][] confusionMatrix = {
+            {5, 2},
+            {1, 8}
+        };
+
+        // Calculating TP, TN, FP, FN, and F1-score
+        int TP = confusionMatrix[0][0];
+        int TN = confusionMatrix[1][1];
+        int FP = confusionMatrix[0][1];
+        int FN = confusionMatrix[1][0];
+
+        double precision = (double) TP / (TP + FP);
+        double recall = (double) TP / (TP + FN);
+        double f1Score = 2 * (precision * recall) / (precision + recall);
+
+        System.out.println("Confusion Matrix:");
+        for (int i = 0; i < confusionMatrix.length; i++) {
+            for (int j = 0; j < confusionMatrix[i].length; j++) {
+                System.out.print(confusionMatrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("True Positive (TP): " + TP);
+        System.out.println("True Negative (TN): " + TN);
+        System.out.println("False Positive (FP): " + FP);
+        System.out.println("False Negative (FN): " + FN);
+        System.out.println("F1-score: " + f1Score);
+    }
+}public class ConfusionMatrix {
+
+    public static void main(String[] args) {
+
+        // Creating a confusion matrix
+        int[][] confusionMatrix = {
+            {5, 2},
+            {1, 8}
+        };
+
+        // Calculating TP, TN, FP, FN, and F1-score
+        int TP = confusionMatrix[0][0];
+        int TN = confusionMatrix[1][1];
+        int FP = confusionMatrix[0][1];
+        int FN = confusionMatrix[1][0];
+
+        double precision = (double) TP / (TP + FP);
+        double recall = (double) TP / (TP + FN);
+        double f1Score = 2 * (precision * recall) / (precision + recall);
+
+        System.out.println("Confusion Matrix:");
+        for (int i = 0; i < confusionMatrix.length; i++) {
+            for (int j = 0; j < confusionMatrix[i].length; j++) {
+                System.out.print(confusionMatrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("True Positive (TP): " + TP);
+        System.out.println("True Negative (TN): " + TN);
+        System.out.println("False Positive (FP): " + FP);
+        System.out.println("False Negative (FN): " + FN);
+        System.out.println("F1-score: " + f1Score);
+    }
+}
