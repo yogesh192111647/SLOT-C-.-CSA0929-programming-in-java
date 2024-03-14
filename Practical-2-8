@@ -1,56 +1,79 @@
 public interface Tree {
-
-    void fruits(int a, int b);
-
-    void leaves(int a, int b, int c);
-
-    void flowers(int a, int b, int c, int d);
+    void fruits(String... fruits);
+    void leaves(String... leaves);
+    void flowers(String... flowers);
 }
 
-class Branch1 implements Tree {
+public class Branch1 implements Tree {
+    private String[] fruits;
+    private String[] leaves;
+    private String[] flowers;
 
-    @Override
-    public void fruits(int a, int b) {
-        System.out.println("Fruits in Branch1: " + a + " and " + b);
+    public Branch1(String... fruits) {
+        this.fruits = fruits;
     }
 
     @Override
-    public void leaves(int a, int b, int c) {
-        System.out.println("Leaves in Branch1: " + a + ", " + b + ", and " + c);
+    public void fruits(String... fruits) {
+        this.fruits = fruits;
     }
 
     @Override
-    public void flowers(int a, int b, int c, int d) {
-        System.out.println("Flowers in Branch1: " + a + ", " + b + ", " + c + ", and " + d);
+    public void leaves(String... leaves) {
+        this.leaves = leaves;
+    }
+
+    @Override
+    public void flowers(String... flowers) {
+        this.flowers = flowers;
+    }
+
+    public String[] getFruits() {
+        return fruits;
+    }
+
+    public String[] getLeaves() {
+        return leaves;
+    }
+
+    public String[] getFlowers() {
+        return flowers;
     }
 }
 
-class Branch2 implements Tree {
+public class Branch2 implements Tree {
+    private String[] fruits;
+    private String[] leaves;
+    private String[] flowers;
 
-    @Override
-    public void fruits(int a, int b) {
-        System.out.println("Fruits in Branch2: " + a + " and " + b);
+    public Branch2(String... fruits) {
+        this.fruits = fruits;
     }
 
     @Override
-    public void leaves(int a, int b, int c) {
-        System.out.println("Leaves in Branch2: " + a + ", " + b + ", and " + c);
+    public void fruits(String... fruits) {
+        this.fruits = fruits;
     }
 
     @Override
-    public void flowers(int a, int b, int c, int d) {
-        System.out.println("Flowers in Branch2: " + a + ", " + b + ", " + c + ", and " + d);
+    public void leaves(String... leaves) {
+        this.leaves = leaves;
+    }
+
+    @Override
+    public void flowers(String... flowers) {
+        this.flowers = flowers;
+    }
+
+    public String[] getFruits() {
+        return fruits;
+    }
+
+    public String[] getLeaves() {
+        return leaves;
+    }
+
+    public String[] getFlowers() {
+        return flowers;
     }
 }
-
-class Main {
-
-    public static void main(String[] args) {
-        Tree tree1 = new Branch1();
-        Tree tree2 = new Branch2();
-
-        tree1.fruits(1, 2);
-        tree1.leaves(3, 4, 5);
-        tree1.flowers(6, 7, 8, 9);
-
-        tree2
