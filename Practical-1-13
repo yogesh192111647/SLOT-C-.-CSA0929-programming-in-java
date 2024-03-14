@@ -1,0 +1,28 @@
+public class Main {
+    public static void main(String[] args) {
+        int[][] array = {
+            {10, 20, 30},
+            {40, 50, 60},
+            {70, 80, 90}
+        };
+
+        int greatestValue = Integer.MIN_VALUE;
+        int loopIndex = -1;
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if (array[i][j] > greatestValue) {
+                    greatestValue = array[i][j];
+                    loopIndex = i;
+                }
+            }
+        }
+
+        if (loopIndex != -1) {
+            System.out.println("The greatest value is: " + greatestValue);
+            System.out.println("It is located in the " + (loopIndex + 1) + "th loop");
+        } else {
+            System.out.println("No greatest value found");
+        }
+    }
+}
