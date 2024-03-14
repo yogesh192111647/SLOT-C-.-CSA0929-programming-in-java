@@ -1,0 +1,42 @@
+import java.util.Random;
+
+public class StringBuilderVsStringBuffer {
+
+    public static void main(String[] args) {
+
+        // Example of StringBuilder and StringBuffer appending strings
+        StringBuilder stringBuilder = new StringBuilder();
+        StringBuffer stringBuffer = new StringBuffer();
+
+        stringBuilder.append("Hello, ");
+        stringBuilder.append("World!");
+        System.out.println("StringBuilder: " + stringBuilder.toString());
+
+        stringBuffer.append("Hello, ");
+        stringBuffer.append("World!");
+        System.out.println("StringBuffer: " + stringBuffer.toString());
+
+        // Performance comparison
+        int iterations = 100000;
+        long startTime, endTime;
+
+        // StringBuilder
+        startTime = System.currentTimeMillis();
+        StringBuilder sb = new StringBuilder();
+        Random random = new Random();
+        for (int i = 0; i < iterations; i++) {
+            sb.append(random.nextInt(100));
+        }
+        endTime = System.currentTimeMillis();
+        System.out.println("StringBuilder time taken: " + (endTime - startTime) + " milliseconds");
+
+        // StringBuffer
+        startTime = System.currentTimeMillis();
+        StringBuffer sb2 = new StringBuffer();
+        for (int i = 0; i < iterations; i++) {
+            sb2.append(random.nextInt(100));
+        }
+        endTime = System.currentTimeMillis();
+        System.out.println("StringBuffer time taken: " + (endTime - startTime) + " milliseconds");
+    }
+}
