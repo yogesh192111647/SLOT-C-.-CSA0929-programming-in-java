@@ -1,0 +1,22 @@
+public class BrotherAges {
+
+    public static void main(String[] args) {
+
+        // Defining the ages of the two brothers
+        int olderBrotherAge = 56;
+        int ageDifference = 3; // assuming the age difference is 4, not more than 3
+        int youngerBrotherAge = 28 - ageDifference; // finding the age of the younger brother
+
+        // Checking if the age difference is more than 3
+        if (ageDifference > 3) {
+            System.out.println("Error: The age difference cannot be more than 3.");
+        } else {
+            // Finding the age of the younger brother when the older brother was 5
+            int youngerBrotherAgeAt5 = 5 - ageDifference;
+
+            // Printing the ages of the two brothers
+            System.out.println("The age of the younger brother when the older brother is 56 is " + (youngerBrotherAge + olderBrotherAge - 56));
+            System.out.println("The age of the younger brother when the older brother was 5 is " + youngerBrotherAgeAt5);
+        }
+    }
+}
