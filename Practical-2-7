@@ -1,0 +1,44 @@
+public interface Sum {
+
+    int sum(int[] numbers);
+}
+
+public interface Avg {
+
+    double avg(int[] numbers);
+}
+
+public interface Percentage {
+
+    double percentage(int score, int total);
+}
+
+class Calculator implements Sum, Avg, Percentage {
+
+    @Override
+    public int sum(int[] numbers) {
+        int sum = 0;
+        for (int number : numbers) {
+            sum += number;
+        }
+        return sum;
+    }
+
+    @Override
+    public double avg(int[] numbers) {
+        return (double) sum(numbers) / numbers.length;
+    }
+
+    @Override
+    public double percentage(int score, int total) {
+        return (double) score / total * 100;
+    }
+
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+        int[] numbers = {1, 2, 3, 4, 5};
+        System.out.println("Sum: " + calculator.sum(numbers));
+        System.out.println("Average: " + calculator.avg(numbers));
+        System.out.println("Percentage: " + calculator.percentage(50, 100));
+    }
+}
